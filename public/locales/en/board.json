@@ -1,13 +1,15 @@
 {
   "title": "Board of Directors",
-  "subtitle": "Management 2024–2026",
+  "subtitle": "Meet the members who make up our board of directors",
 
   "roles": {
     "president": "President",
     "vicePresident": "Vice President",
-    "captureDirector": "Director of Event Acquisition",
-    "financeDirector": "Financial Director",
-    "marketingDirector": "Marketing Director",
+    "executiveDirector": "Executive Director",
+    "firstSecretaryDirector": "1st Secretary Director",
+    "firstFinanceDirector": "1st Finance Director",
+    "heritageDirector": "Heritage Director",
+    "publicRelations": "Public Relations",
     "eventsDirector": "Events Director"
   }
 }

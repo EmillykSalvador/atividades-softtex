@@ -1,13 +1,15 @@
 {
   "title": "Directiva",
-  "subtitle": "Gestión 2024–2026",
+  "subtitle": "Conozca a los miembros que componen nuestra directiva",
 
   "roles": {
     "president": "Presidente",
     "vicePresident": "Vicepresidente",
-    "captureDirector": "Director de Captación",
-    "financeDirector": "Director Financiero",
-    "marketingDirector": "Director de Marketing",
+    "executiveDirector": "Directora Ejecutiva",
+    "firstSecretaryDirector": "1º Director Secretario",
+    "firstFinanceDirector": "1ª Directora Financiera",
+    "heritageDirector": "Director de Patrimonio",
+    "publicRelations": "Relaciones Públicas",
     "eventsDirector": "Director de Eventos"
   }
 }
