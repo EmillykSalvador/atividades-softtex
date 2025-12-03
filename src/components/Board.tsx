@@ -1,15 +1,24 @@
 import { useTranslation } from "react-i18next";
-
+import andreImg from "../assets/andremotta.jpg";
+import pabloImg from "../assets/pablojatoba.jpg";
+import fabiolaImg from "../assets/fabiolacortezzi.jpg";
+import divaildoImg from "../assets/divaildojunior.jpg";
+import manuelaImg from "../assets/manueladantas.jpg";
+import luizImg from "../assets/luizcarloslira.jpg";
+import izabelliImg from "../assets/izabelliaraujo.jpg";
+import tupacImg from "../assets/tupacrodrigues.jpg";
 const Board = () => {
   const { t } = useTranslation("board");
 
   const boardMembers = [
-    { name: "Nome Completo", role: t("roles.president"), photo: "" },
-    { name: "Nome Completo", role: t("roles.vicePresident"), photo: "" },
-    { name: "Nome Completo", role: t("roles.captureDirector"), photo: "" },
-    { name: "Nome Completo", role: t("roles.financeDirector"), photo: "" },
-    { name: "Nome Completo", role: t("roles.marketingDirector"), photo: "" },
-    { name: "Nome Completo", role: t("roles.eventsDirector"), photo: "" }
+    { name: "ANDRÉ DANTAS MOTTA", role: t("roles.president"), photo: andreImg},
+    { name: "PABLO BARBOSA JATOBÁ", role: t("roles.vicePresident"), photo: pabloImg },
+    { name: "MANUELA DANTAS MOTTA LOPES", role: t("roles.firstFinanceDirector"), photo: manuelaImg },
+    { name: "FABÍOLA CORTEZZI GUIMARÃES DUARTE", role: t("roles.executiveDirector"), photo: fabiolaImg },
+    { name: "DIVAILDO BARTOLOMEU DE LIMA JUNIOR", role: t("roles.firstSecretaryDirector"), photo: divaildoImg },
+    { name: "TUPAC RODRIGUES ALBUQUERQUE DANTAS", role: t("roles.eventsDirector"), photo: tupacImg },
+    { name: "LUIZ CARLOS LIRA", role: t("roles.heritageDirector"), photo: luizImg },
+    { name: "IZABELLI ARAÚJO DINIZ", role: t("roles.publicRelations"), photo: izabelliImg },
   ];
 
   return (
@@ -25,10 +34,18 @@ const Board = () => {
           {boardMembers.map((member, index) => (
             <div
               key={index}
-              className="rounded-xl border border-emerald-500/40 bg-neutral-900 p-6 text-center"
+              className="rounded-xl border border-neutral-700/40 bg-neutral-800/70 p-6 text-center shadow-md transition-all duration-200 hover:shadow-lg hover:bg-neutral-700/60 hover:-translate-y-0.5"
             >
-              <div className="mx-auto mb-4 h-32 w-32 rounded-full bg-neutral-700 flex items-center justify-center text-neutral-500">
-                [Foto]
+              <div className="mx-auto mb-4 h-32 w-32 rounded-full bg-neutral-700 flex items-center justify-center text-neutral-500 overflow-hidden">
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <span>[Foto]</span>
+                )}
               </div>
 
               <h3 className="mb-1 text-lg font-semibold text-white">
