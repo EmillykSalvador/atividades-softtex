@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import andreImg from "../assets/andremotta.jpg";
 import pabloImg from "../assets/pablojatoba.jpg";
 import fabiolaImg from "../assets/fabiolacortezzi.jpg";
@@ -10,6 +11,31 @@ import manuelaImg from "../assets/manueladantas.jpg";
 import luizImg from "../assets/luizcarloslira.jpg";
 import izabelliImg from "../assets/izabelliaraujo.jpg";
 import tupacImg from "../assets/tupacrodrigues.jpg";
+
+// Custom Arrows
+const NextArrow = ({ onClick }: { onClick?: () => void }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-0 md:right-[-60px] top-1/2 -translate-y-1/2 -mt-6 z-20 p-2 rounded-full bg-white text-slate-700 shadow-md border border-slate-100 hover:bg-slate-50 transition-colors"
+      aria-label="Próximo"
+    >
+      <ChevronRight size={24} />
+    </button>
+  );
+};
+
+const PrevArrow = ({ onClick }: { onClick?: () => void }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-0 md:left-[-60px] top-1/2 -translate-y-1/2 -mt-6 z-20 p-2 rounded-full bg-white text-slate-700 shadow-md border border-slate-100 hover:bg-slate-50 transition-colors"
+      aria-label="Anterior"
+    >
+      <ChevronLeft size={24} />
+    </button>
+  );
+};
 
 const Board = () => {
   const { t } = useTranslation("board");
@@ -31,6 +57,9 @@ const Board = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 768,
@@ -50,35 +79,37 @@ const Board = () => {
   };
 
   return (
-    <section className="bg-neutral-800 py-20">
+    <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-4 text-3xl font-bold text-emerald-400">
+        <h2 className="mb-4 text-3xl font-bold text-emerald-500">
           {t("title")}
         </h2>
 
-        <p className="mb-12 text-neutral-400">{t("subtitle")}</p>
+        <p className="mb-12 text-slate-500">{t("subtitle")}</p>
 
         <Slider {...settings}>
           {boardMembers.map((member, index) => (
-            <div key={index} className="px-4">
-              <div className="rounded-xl border border-neutral-700/40 bg-neutral-800/70 p-6 text-center shadow-md transition-all duration-200 hover:shadow-lg hover:bg-neutral-700/60 hover:-translate-y-0.5">
-                <div className="mx-auto mb-4 h-32 w-32 rounded-full bg-neutral-700 flex items-center justify-center text-neutral-500 overflow-hidden">
-                  {member.photo ? (
-                    <img
-                      src={member.photo}
-                      alt={member.name}
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <span>[Foto]</span>
-                  )}
+            <div key={index} className="px-4 h-full pb-12">
+              <div className="flex flex-col items-center justify-between h-[270px] rounded-xl border border-slate-100 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-slate-200">
+                <div className="w-full flex flex-col items-center">
+                  <div className="mx-auto mb-4 h-32 w-32 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 overflow-hidden">
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <span>[Foto]</span>
+                    )}
+                  </div>
+
+                  <h3 className="mb-2 text-lg font-semibold text-slate-900 line-clamp-2">
+                    {member.name}
+                  </h3>
                 </div>
 
-                <h3 className="mb-1 text-lg font-semibold text-white">
-                  {member.name}
-                </h3>
-
-                <p className="text-sm text-emerald-400">{member.role}</p>
+                <p className="text-sm text-emerald-500 font-medium">{member.role}</p>
               </div>
             </div>
           ))}

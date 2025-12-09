@@ -7,9 +7,9 @@ const Associates = () => {
   const benefits = t("benefits", { returnObjects: true }) as string[];
 
   return (
-    <section className="bg-neutral-900 py-20">
+    <section className="bg-slate-50 py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-12 text-3xl font-bold text-orange-400">
+        <h2 className="mb-12 text-3xl font-bold text-orange-500">
           {t("title")}
         </h2>
 
@@ -17,24 +17,24 @@ const Associates = () => {
           {associates.map((associate, index) => (
             <div
               key={index}
-              className="flex h-32 items-center justify-center rounded-xl border border-neutral-700 bg-neutral-800 text-neutral-500"
+              className="flex h-32 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400"
             >
               [Logo {associate}]
             </div>
           ))}
         </div>
 
-        <div className="rounded-2xl bg-gradient-to-r from-orange-500/20 to-orange-600/20 border border-orange-500/40 p-8 md:p-12">
-          <h3 className="mb-4 text-2xl font-bold text-white">
+        <div className="rounded-2xl bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 p-8 md:p-12">
+          <h3 className="mb-4 text-2xl font-bold text-slate-900">
             {t("callTitle")}
           </h3>
 
-          <p className="mb-6 text-neutral-300">{t("callText")}</p>
+          <p className="mb-6 text-slate-600">{t("callText")}</p>
 
           <ul className="mb-8 space-y-2">
             {benefits.map((benefit, index) => (
-              <li key={index} className="flex items-start gap-2 text-neutral-300">
-                <span className="text-orange-400">✓</span>
+              <li key={index} className="flex items-start gap-2 text-slate-600">
+                <span className="text-orange-500">✓</span>
                 {benefit}
               </li>
             ))}

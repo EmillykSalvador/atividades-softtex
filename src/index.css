@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for Slick Carousel arrows to be visible on white background */
+.slick-prev:before,
+.slick-next:before {
+  color: #0f172a !important; /* slate-900 */
+  opacity: 0.75;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: #0f172a !important;
+  opacity: 1;
+}

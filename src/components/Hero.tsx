@@ -5,15 +5,15 @@ const Hero = () => {
   const { t } = useTranslation("hero");
 
   return (
-    <section className="relative flex min-h-screen items-center bg-gradient-to-br from-neutral-900 to-neutral-800">
+    <section className="relative flex min-h-screen items-center bg-slate-50">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
         <div className="space-y-6">
 
-          <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+          <h1 className="text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
             {t("title")}
           </h1>
 
-          <p className="text-lg text-neutral-300">
+          <p className="text-lg text-slate-600">
             {t("subtitle")}
           </p>
 

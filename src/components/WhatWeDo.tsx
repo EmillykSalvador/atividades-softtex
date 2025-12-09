@@ -54,9 +54,9 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section className="bg-neutral-900 py-20">
+    <section className="bg-slate-50 py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-12 text-3xl font-bold text-white">
+        <h2 className="mb-12 text-3xl font-bold text-slate-900">
           {t("title")}
         </h2>
 
@@ -64,17 +64,17 @@ const WhatWeDo = () => {
           {services.map((service) => (
             <div
               key={service.key} // Melhor key: use algo único
-              className={`group rounded-xl border border-neutral-700 bg-neutral-800 p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-${service.color.split('-')[1]}-500`} // Hover usa a cor do serviço
+              className={`group rounded-xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-${service.color.split('-')[1]}-500`} // Hover usa a cor do serviço
             >
               <div className={`mb-3 text-3xl ${service.color}`}>
                 {service.icon ? <service.icon className="h-8 w-8" /> : "●"} {/* Ícone ou ponto colorido */}
               </div>
 
-              <h3 className="mb-2 text-lg font-semibold text-white group-hover:text-white transition-colors">
+              <h3 className="mb-2 text-lg font-semibold text-slate-900 group-hover:text-slate-900 transition-colors">
                 {t(`${service.key}.title`)}
               </h3>
 
-              <p className="text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">
+              <p className="text-sm text-slate-500 group-hover:text-slate-600 transition-colors">
                 {t(`${service.key}.description`)}
               </p>
             </div>
